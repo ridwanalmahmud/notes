@@ -1,8 +1,22 @@
 #import "@preview/fletcher:0.5.8" as fletcher: diagram, edge, node, shapes
 #set page(numbering: "1")
 #set text(
-    font: "JetBrainsMono NFM",
-    size: 16pt,
+    font: "Monaspace Radon NF",
+    size: 18pt,
+    weight: "semibold",
+    features: (
+        "calt",
+        "liga",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06",
+        "ss07",
+        "ss08",
+        "ss09",
+    ),
 )
 #set par(justify: true)
 

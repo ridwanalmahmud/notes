@@ -1,5 +1,27 @@
-#set text(font: "JetBrainsMono NFM", size: 16pt)
-#set page(margin: 1.5in)
+#set text(
+    font: "Monaspace Radon NF",
+    size: 18pt,
+    weight: "semibold",
+    features: (
+        "calt",
+        "liga",
+        "ss01",
+        "ss02",
+        "ss03",
+        "ss04",
+        "ss05",
+        "ss06",
+        "ss07",
+        "ss08",
+        "ss09",
+    ),
+)
+#align(center)[#underline(text(
+        weight: "bold",
+        size: 24pt,
+        fill: blue,
+    )[GDB Cheatsheet])
+]
 
 #align(center)[
     #text(weight: "bold", size: 24pt)[Calculus (Differentiation)]
