@@ -17,7 +17,6 @@
         "ss09",
     ),
 )
-#set par(justify: true)
 
 #align(center)[#underline(text(
         weight: "bold",
@@ -69,6 +68,16 @@
     [```sh until <line>```], [Run until specified line],
 )
 
+- *Execution Control*
+#table(
+    columns: (auto, auto),
+    align: horizon,
+    table.header([*Command*], [*Description*]),
+    [```sh quit```], [Exit GDB (q for short)],
+    [```sh kill```], [Stop the running program],
+    [```sh Ctrl+C```], [Interrupt the running program],
+)
+
 - *Examining Data*
 #table(
     columns: (auto, auto),
@@ -82,16 +91,6 @@
     [```sh info registers```], [Show CPU registers],
 )
 
-- *Execution Control*
-#table(
-    columns: (auto, auto),
-    align: horizon,
-    table.header([*Command*], [*Description*]),
-    [```sh quit```], [Exit GDB (q for short)],
-    [```sh kill```], [Stop the running program],
-    [```sh Ctrl+C```], [Interrupt the running program],
-)
-
 - *Examining Code*
 #table(
     columns: (auto, auto),
@@ -101,6 +100,26 @@
     [```sh list function```], [Show source code of function],
     [```sh list file.c:15```], [Show source code around line 15 of file.c],
     [```sh backtrace```], [Show function call stack (bt for short)],
+)
+- *Writing to Registers*
+#table(
+    columns: (auto, auto),
+    align: horizon,
+    table.header([*Command*], [*Description*]),
+    [```sh set *(char *)($ebp-0x8) = 0x41```],
+    [Writing a single byte char('A' in Ascii)],
+
+    [```sh set *(short *)($ebp-0x8) = 0x1c```],
+    [Writing a 2-byte short integer],
+
+    [```sh set *(int *)($ebp-0x8) = 0xdeadbeef```],
+    [Writing a 4-byte long integer],
+
+    [```sh set *(long long *)($ebp-0x8) = 0xdeadbeefcafebabe```],
+    [Writes an 8-byte long long],
+
+    [```sh set {char [5]}($ebp-0x8) = "ABCD"```],
+    [Writes the 5-byte string "ABCD" (includes null terminator \0)],
 )
 
 - *Useful Configuration*

@@ -38,10 +38,19 @@
     ```],
     [strings in a binary],
 
-    [```bash
+    [```sh
     objdump -d -M intel <binaryname> | sed -n '/<main>:/,$p'
     ```],
     [diassemble main],
+    [```sh
+    objdump -d sh | grep -A20 "<_start>" | grep -Po '\s\K[a-f0-9]{2}(?=\s)' | sed 's/^/\\x/g' | paste -sd ''
+    ```],
+    [extract shellcode],
+
+    [```py
+    python -m http.server 8000
+    ```],
+    [create a http server at port 8000],
 
     [```py
     import sys; sys.byteorder
